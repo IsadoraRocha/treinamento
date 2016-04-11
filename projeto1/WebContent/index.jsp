@@ -6,18 +6,16 @@
 </head>
 <body>
 
- 
-  çççç
     
       <h1 class = "linha"> Minha Pagina</h1>
       
- <!--     <panel> 
-        <p style = "text-align: left"> <br> Primiera pagina feita na Sonner </p>
-        <div class = "box1"> <br>
+      <panel> 
+        <p> Primiera pagina feita na Sonner </p>
+        <div class = "box1 linha"> 
         <button id = "botao" type = "button" onclick = "alert('Você curtiu minha pagina')" > Curtir</button> 
         <button type = "button" onclick = "alert('Você curiu minha página mesmo assim!')">Não Curtir</button><br>
       </div>  
-    </panel> --> 
+    </panel> 
 
 </body>
 </html>
