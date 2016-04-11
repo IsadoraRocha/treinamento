@@ -1,0 +1,43 @@
+body{
+    background-image: url("http://www.dicasdemulher.com.br/wp-content/gallery/papeis-de-parede-femininos-para-computador/papel-de-parede-geometrico.jpg");
+    background-repeat: no-repeat;
+}
+
+h1{
+    font-family: "Comic Sans MS";
+    text-align: center;
+    color: orange;
+    }
+    
+.linha{
+        padding: 5xp;
+      }
+    
+p{
+  font-size: 20px;
+  text-decoration:bold;
+  color: gray;
+}
+
+panel{
+        max-width:370px;
+        background: rgba(255,255,255,0.6);
+        margin:auto;
+        text-align: center;
+        color: rgba(0,0,0,.5);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top:0;
+        bottom: 0; 
+        height: 500px;
+        overflow: hidden;
+}
+.box1{
+      border:2px solid gray;
+}
+
+button{
+        margin: 0;
+        border: 0 none;
+}
