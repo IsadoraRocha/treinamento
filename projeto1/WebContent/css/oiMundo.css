@@ -1,26 +1,46 @@
-body{
-    background-image: url("http://www.dicasdemulher.com.br/wp-content/gallery/papeis-de-parede-femininos-para-computador/papel-de-parede-geometrico.jpg");
-   
-}
-
 h1{
     font-family: "Comic Sans MS";
+    font-size: 80px;
     text-align: center;
-    color: orange;
-    }
-    
-.linha{
-        background-color:none;
-    	text-align:center;
-    	padding:20px;
-
-      }
+    color: #400040;
+    }    
     
 p{
-  font-size: 20px;
+  top:50%;
+  left: 50%;
+  text-align: center;
   text-decoration:bold;
-  color: gray;
+  color: #6a6a6a;
 }
+
+
+#boxTop{
+	background-image: url("http://www.papeldeparedekig.com.br/wp-content/uploads/2013/08/13227-20.jpg");
+	background-size: cover;
+	min-height:400px;
+	position: relative;
+
+	text-top: 50%;
+	text-left:50%;
+	text-right: 50%;
+	
+}
+
+
+h2{
+
+  text-decoration:bold;
+  font-size: 20px;
+  color: #6a6a6a;	
+}
+
+
+#fundo{
+	background-image: url("http://www.casadopapeldeparede.com/wp-content/uploads/2013/04/F934-06.jpg");
+	background-size: cover;
+	position: relative;
+}
+
 
 panel{
         max-width:370px;
@@ -36,20 +56,70 @@ panel{
         height: 500px;
         
 }
+    
+button{
+		font-size: 23px;
+        margin: 0;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+        
+}
+
+header{
+	background: #ffdff9;
+	color: #400040;
+	text-align: center;
+	padding: 5px;
+}
+
+article{
+
+	color: #40040;
+	padding: 90px;
+
+}
+
+
+<!-- ----------------------------------------- C L A S S E S ------------------------------------------------ -->
+
+.letraGrande{
+	font-size:100px;
+}
+
+.boxGeral{
+	text-align: center;
+}
+
+.boxImage{
+	height: 300px;
+	width: 200px;
+	float: left;
+	top: 50%;
+	text-align: center;
+}
+
 .box1{
 	  text-align:center;
-	  left: 0;
-      right: 0;
-      top:0;
       border:2px solid gray;
       height:50px;
       width:200px;
-      
+      position: absolute;
+      top: 15%;
+	  left: 15%;      
 }
-    
-button{
-		font-size: 15px;
-        margin: 0;
-        border: 0 none;
-        
-}
+
+.linha{
+        background-color:none;
+    	text-align:center;
+    	padding:20px;
+
+      }
+
+.linhaDeConteudo{
+        background-color:none;
+    	text-align:center;
+    	padding:90px;
+
+      }
+
