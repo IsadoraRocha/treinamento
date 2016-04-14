@@ -19,39 +19,47 @@
       	</div>	
       </section>
       
-       <article style = "background: #ffdff9">
+       <article style = "background: rgba(255, 157, 248, 0.2)">
        	
        	<h2 style = "top: 2%"><ins>Segunda parte da página</ins></h2>
        	<br/>
-       	<table align = "left">
+       	<table class = "tabela center">
        		<tr>
        			<td><image src ="http://png.clipart.me/previews/f16/3d-boy-thumbs-up-20961.jpg" width = "60" height = "60" aling = "left" alt = "Joia" float = "left"/></td>
        			<td>Imagem para <br/> teste de jóia</td>
-       		</tr>
-       	</table>
        	
-       	
-       	<table align = "center">
-       		<tr>
-       			<td><image src ="http://ccbela.files.wordpress.com/2012/07/boneco-aniversariante2.png" width = "60" height = "60" aling = "left" alt = "Festa"/></td>
+       			<td><image src ="http://ccbela.files.wordpress.com/2012/07/boneco-aniversariante2.png" width = "70" height = "70" aling = "left" alt = "Festa"/></td>
        			<td>Imagem para <br/> teste de festa</td>
-       		</tr>
-       	</table>
        	
-       	<table align = "right">
-       		<tr>
-       			<td><image src ="http://regianemartins.com.br/wp-content/uploads/2015/07/boneco-contador-do-tempo1.jpg" width = "60" height = "60" aling = "left" alt = "relógio"/></td>
+       			<td><image src ="http://regianemartins.com.br/wp-content/uploads/2015/07/boneco-contador-do-tempo1.jpg" width = "60" height = "70" aling = "left" alt = "relógio"/></td>
        			<td>Imagem de <br/> horas</td>
        		</tr>
        	</table>
        </article>
        
-       <article id = "fundo" >
-       		<h2><strong>Terceira parte da página</strong></h2>
+       <article id = "fundo">
+       		<h2 class = "center"><strong>Terceira parte da página: login</strong></h2>
+       		<div>
+       			<form class = "center" action="servletAutenticacao"  method="post">
+       				<div id = "boxLogin" clas = "center" >
+       					<table id = "login" style = "font-size: 150%" class = "center">
+       					<tr>
+       						<td>Usuário:</td>
+       						<td><input type = "text" name = "usuario"  value = "Sonner sistemas"></td>
+       					</tr>
+       					<br><br>
+           				    <td alind = "left">Senha:</td>
+       				 		<td><input type = "password" name = "senha" value = "sonner"></td>
+       					</table>				 		
+       				 		<br><br><br>
+       					<input type = "submit" value ="Entra"  style = "font-size: 110%"  >
+       				</div>
+       			</form>
+       		</div>
        
        </article>
        
-       <footer style = "background:#ffdff9" class = "linha">
+       <footer style = "background: rgba(255, 157, 248, 0.2)" class = "linha">
        		<p>Hora de dar tchau!!</p>
        </footer>
      

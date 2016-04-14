@@ -1,0 +1,41 @@
+body{
+	background-image: url("https://s-media-cache-ak0.pinimg.com/736x/3a/01/f9/3a01f9efb416eb22ce9cb157e08d91f8.jpg");
+	text-align: center;
+	top: 50%;
+	
+}
+
+h1{
+	
+	color: #400040;
+	font-family:Felix Tiling Regular;
+	font-size: 300%;
+	text-aling: center;
+}
+
+article{
+	border: 2px solid white;
+	width: 400px;
+	height: auto;
+	float: left;
+	text-aling: center;
+}
+
+aside{
+	background: rgba(255, 255, 255,0.4);
+	float: left;
+	width: 100%;
+	padding: 10px;
+	
+}
+
+p{
+	font-size: 150%;
+	color: marron;
+	text-aling: center;
+}
+
+table{
+	font-size: 150%;
+	color: maroon;
+}

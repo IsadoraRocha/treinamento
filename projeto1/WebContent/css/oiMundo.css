@@ -1,3 +1,12 @@
+.center{
+	margin: auto;
+	left: 50%;
+	
+	top: 50%;
+	width: 80%;
+	padding: 50px;
+}
+
 h1{
     font-family: "Comic Sans MS";
     font-size: 80px;
@@ -11,8 +20,17 @@ p{
   text-align: center;
   text-decoration:bold;
   color: #6a6a6a;
+  margin: 0;
 }
 
+#login{
+  top:50%;
+  left: 50%;
+  text-align: center;
+  text-decoration:bold;
+  color: #6a6a6a;
+  margin: 0;
+}
 
 #boxTop{
 	background-image: url("http://www.papeldeparedekig.com.br/wp-content/uploads/2013/08/13227-20.jpg");
@@ -30,7 +48,7 @@ p{
 h2{
 
   text-decoration:bold;
-  font-size: 20px;
+  font-size: 30px;
   color: #6a6a6a;	
 }
 
@@ -67,19 +85,23 @@ button{
 }
 
 header{
-	background: #ffdff9;
+	background: rgba(255, 157, 248, 0.2);
 	color: #400040;
 	text-align: center;
 	padding: 5px;
 }
 
 article{
-
+	
+	text-aling: center;
 	color: #40040;
 	padding: 90px;
 
 }
-
+.tabela td{
+	padding: 10px;
+	
+}
 
 <!-- ----------------------------------------- C L A S S E S ------------------------------------------------ -->
 
@@ -107,6 +129,13 @@ article{
       position: absolute;
       top: 15%;
 	  left: 15%;      
+}
+
+#boxLogin{
+	text-aling:center;
+	border: 2px solid #ffdff9;
+	background: rgba(255, 193, 255, .1);
+	width: 500px;
 }
 
 .linha{
