@@ -1,19 +1,39 @@
+.fundoTransparence{
+	background: rgba(216,216,216,.6);
+}
+
+
 body{
 	background-image: url("https://s-media-cache-ak0.pinimg.com/736x/3a/01/f9/3a01f9efb416eb22ce9cb157e08d91f8.jpg");
 	text-align: center;
 	top: 50%;
-	
+	font-family: Copperplate Gothic;	
 }
 
 h1{
 	
-	color: #400040;
-	font-family:Felix Tiling Regular;
-	font-size: 300%;
+	color: #150015;
+	font-size: 250%;
 	text-aling: center;
+
 }
 
+h2{
+	color: #000016;
+	font-size: 200%;
+	text-align: center;
+}
+
+p{
+	font-size: 150%;
+	color: #0b0000;
+	text-aling: center;
+
+}
+
+
 article{
+	padding: none;
 	border: 2px solid white;
 	width: 400px;
 	height: auto;
@@ -22,20 +42,50 @@ article{
 }
 
 aside{
+	margin:auto;
 	background: rgba(255, 255, 255,0.4);
-	float: left;
+	text-align: center;
+	color: #400000;
+	padding: 12;
+}
+
+.show-grid{
+	margin-bottom: 15px;
+}
+
+.row{
+	margin-rigth: -15px;
+	margin-left: -15px;
+}
+
+.links{
+	color: white;
+	font-size: 20px;	
+}
+
+.navbar-nav{
+	color:black;
+}
+
+#bordaFixa{
+	position: fixed; 
+	top: 0px; 	
+	background-color: rgb(64, 0, 0);
+	padding: 20px;
 	width: 100%;
-	padding: 10px;
-	
 }
 
-p{
-	font-size: 150%;
-	color: marron;
-	text-aling: center;
-}
+#navLado {
+	border: 2px solid white;
+	width: 300px;
+	font-size: 130%;
+	text-color: marron;
+} 
 
-table{
-	font-size: 150%;
-	color: maroon;
-}
+.tabela1{
+ 	height: 50%;
+ 	vertical-align: bottom;
+ 	padding: inherit;
+ }
+
+

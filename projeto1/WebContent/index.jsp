@@ -3,6 +3,7 @@
 <title>Primeira Página</title>
 
 <link rel="stylesheet" href="css/oiMundo.css" />
+<script type="text/javascript" src = "JavaScript/javaScript.js"></script>
 </head>
 <body>
 
@@ -40,16 +41,16 @@
        <article id = "fundo">
        		<h2 class = "center"><strong>Terceira parte da página: login</strong></h2>
        		<div>
-       			<form class = "center" action="servletAutenticacao"  method="post">
+       			<form name = "my forms" class = "center"  action="servletAutenticacao"  onsubmit = "return validaUsuario()" method="post">
        				<div id = "boxLogin" clas = "center" >
        					<table id = "login" style = "font-size: 150%" class = "center">
        					<tr>
-       						<td>Usuário:</td>
-       						<td><input type = "text" name = "usuario"  value = "Sonner sistemas"></td>
+       						<td>Usuario:</td>
+       						<td><input type = "text" name = "usuario" ></td>
        					</tr>
        					<br><br>
            				    <td alind = "left">Senha:</td>
-       				 		<td><input type = "password" name = "senha" value = "sonner"></td>
+       				 		<td><input type = "password" name = "senha"></td>
        					</table>				 		
        				 		<br><br><br>
        					<input type = "submit" value ="Entra"  style = "font-size: 110%"  >
