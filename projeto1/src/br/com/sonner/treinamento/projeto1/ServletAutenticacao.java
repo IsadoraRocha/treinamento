@@ -2,6 +2,11 @@ package br.com.sonner.treinamento.projeto1;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.util.LinkedList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,39 +14,67 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.sonner.treinamento.projeto1.model.Pessoa;
+
 /**
  * Servlet implementation class ServletAutenticacao
  */
+
 @WebServlet("/servletAutenticacao")
 public class ServletAutenticacao extends HttpServlet {
        
     public ServletAutenticacao() {
+    	
+//    	br.com.sonner.treinamento.projeto1.ServletAutenticacao
         super();
     }
 
+    
+    
+    
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		PrintWriter out = response.getWriter();
-//		out.append("Served at: ").append(request.getContextPath());
-		
-		String usuario = request.getParameter("usuario");
-		String senha = request.getParameter("senha");
+		//Conectar com o banco de dados
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection connection = DriverManager.getConnection("jdbc:mysql://10.1.1.16:3306/agritap","root","sicsadm");
+			//Buscar a informacao no banco		
+			ResultSet resultSet = connection.createStatement().executeQuery("select id,nome,cpf,email,ativo from Pessoa");
+			List<Pessoa> listaDePessoas = new LinkedList<>();
+			while(resultSet.next())	{
 
-		//tomar as suas decisoes
-//		out.append("<br/>Usuario Informado: ").append( usuario );
-//		out.append("<br/>Senha informada: ").append( senha );
-		
-		if(usuario.equals("usuario1")){
-//			encaminha para a pagina 1
-			request.setAttribute("mensagem", "Mensagem para ser utilizada no jsp");
-			request.getRequestDispatcher("auxiliar.jsp").forward(request, response);
-		}else{
-//			encaminha para a pagina 2
-			request.getRequestDispatcher("auxiliar.jsp").forward(request, response);
+				String nome = resultSet.getString("nome");
+				String email = resultSet.getString("email");
+				boolean ativo = resultSet.getBoolean("ativo");
+				
+				Pessoa pessoa = new Pessoa();
+				pessoa.setNome(nome);
+				pessoa.setEmail(email);
+				pessoa.setAtivo(ativo);
+				listaDePessoas.add(pessoa);
+			
+			
+			}
+			
+			//Disponibilizar a informacao para o jsp
+			request.setAttribute("listaDevalores" , listaDePessoas);
+			
+			//fazer
+			
+			//Fechar a conexao com o banco
+		connection.close();
+		request.getRequestDispatcher("auxiliar.jsp").forward(request, response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
 
-}
+		
+	}
+	
+	

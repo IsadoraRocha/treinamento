@@ -124,8 +124,8 @@
 		
 		<div aling = "center"><h2>Edição de dados</h2><br><br>
 			
-			<form aling = "center" action ="ServletBD" methodo = "post">
-				<table aling = "center">
+			<form action ="ServletBD" method = "post">
+				<table >
 				<tr>
 					<td>Nome:</td>
 					<td><input type = "text" name = "nome"><br></td></tr>
