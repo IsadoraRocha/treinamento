@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="br.com.sonner.treinamento.projeto1.model.Pessoa"%>
+<%@page import="java.util.List"%>
 <html lang = "pt-br">
 <head>
 
@@ -46,19 +49,19 @@
     		<div class="carousel-inner" role="listbox" align="center">
      			 <div class = "caursel-caption" style= "padding: 70px" align="center"><h1> Seja bem vindo a página Sonner Sistemas</h1></div>
      			 <div class="item active">
-       			 	<img src="http://images.forwallpaper.com/files/thumbs/preview/101/1016536__blue-abstract-technology-background-with_p.jpg" alt="Imagem 1" width="460" height="345">
+       			 	<img src="http://www.freestockphotos.name/wallpaper-original/wallpapers/keyboard-and-coffee-on-a-desk-21.jpg" alt="Imagem 1" width="460" height="345">
       			</div>
 
       			<div class="item">
-        			<img src="http://il6.picdn.net/shutterstock/videos/3342122/thumb/1.jpg?i10c=img.resize(height:160)" alt="Imagem 2" width="460" height="345">
+        			<img src="http://adlookat.com/admin/images/listing/Digital-Marketing-Company-In-India.jpg" alt="Imagem 2" width="460" height="345">
       			</div>
     
       			<div class="item">
-      			  <img src="https://image.freepik.com/vetores-gratis/fundo-claro-transparente_98814.jpg" alt="Imagem 3" width="460" height="345">
+      			  <img src="https://www.yourpaf.com/wp-content/uploads/2015/05/business-hand-shake.jpg" alt="Imagem 3" width="460" height="345">
     			</div>
 
     			 <div class="item">
-    			   <img src="http://www.netsystemtecnologia.com.br/emmanutencao/images/mundo.jpg" alt="Imagem 4" width="460" height="345">
+    			   <img src="http://searchengineland.com/figz/wp-content/seloads/2015/01/answers-knowledge-puzzle-solution-ss-1920.jpg" alt="Imagem 4" width="460" height="345">
      			 </div>
     		</div>
     		
@@ -81,17 +84,65 @@
 			</div> 
 	
 			<div class = "col-md-10" >
-				<h2><br>Parte de texto da pagina</h2>
+				<h2><br>Lista de Pessoas</h2>
+				<table align = "center" >
+			
+				<%
+				List<Pessoa> listaDePessoas  = (List<Pessoa>)request.getAttribute("listaDevalores");
+				for(int i = 0; i < listaDePessoas.size(); i++){%>						
+					<tr>
+						<td><%=listaDePessoas.get(i).getNome()%></td>
+						<td><%=listaDePessoas.get(i).getEmail()%></td>
+					</tr>
+					<%
+				}
+				%>
+				</table>
 			</div>
 	
 		</div>
-	
-		<div class = "col-md-12 fundoTransparence" style = "margin-top: 10px;">
-			<p id = "apresentacao">Apresentação da mepresa, junto a um texto qualquer</p>
+
+<!--  
+			<div class = "col-md-10" >
+				<h2><br>Jeito 2</h2>
+				<table align = "center" >
+				<c:forEach var="pessoa" items="${listaDevalores}" >
+					<tr>
+						<td>${pessoa.nome}</td>
+						<td>${pessoa.email}</td>
+					</tr>
+				</c:forEach>
+
+				
+
+				<c:forEach var="token" items="{1,2,3}" >
+						${token}  
+				</c:forEach>
+		</div>
+-->
+			</div>
+		
+		<div aling = "center"><h2>Edição de dados</h2><br><br>
+			
+			<form aling = "center" action ="ServletBD" methodo = "post">
+				<table aling = "center">
+				<tr>
+					<td>Nome:</td>
+					<td><input type = "text" name = "nome"><br></td></tr>
+				<tr>	
+					<td>e-mail:</td>
+					<td><input type = "text" name = "email"><br></td>
+				</tr>
+				</table>
+			<input type = "submit" value = "gravar">							
+			</form>
+					
 		</div>
 		
-		
-	</div>
+	
+		<div class = "col-md-12 fundoTransparence" style = "margin-top: 10px;">
+			<p id = "apresentacao">Apresentação da empresa, junto a um texto qualquer</p><br><br>
+		</div>
 </body>
 </html>
 
