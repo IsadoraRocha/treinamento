@@ -18,8 +18,12 @@ h1{
 }
 
 td{
-	border: 1px solid black;
+	border: 0;
 	padding: 10px;
+}
+
+tr{
+	border: 1px solid black;
 }
 
 h2{
@@ -46,6 +50,9 @@ a:hover{
 	
 }
 
+input{
+	font-size: 10px;
+}
 
 li a{
 	color: white;

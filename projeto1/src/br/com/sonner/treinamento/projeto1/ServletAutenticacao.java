@@ -46,11 +46,13 @@ public class ServletAutenticacao extends HttpServlet {
 				String nome = resultSet.getString("nome");
 				String email = resultSet.getString("email");
 				boolean ativo = resultSet.getBoolean("ativo");
+				int id = resultSet.getInt("id");
 				
 				Pessoa pessoa = new Pessoa();
 				pessoa.setNome(nome);
 				pessoa.setEmail(email);
 				pessoa.setAtivo(ativo);
+				pessoa.setId(id);
 				listaDePessoas.add(pessoa);
 			
 			
@@ -64,6 +66,7 @@ public class ServletAutenticacao extends HttpServlet {
 			//Fechar a conexao com o banco
 		connection.close();
 		request.getRequestDispatcher("auxiliar.jsp").forward(request, response);
+	
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

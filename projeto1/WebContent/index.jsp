@@ -49,7 +49,7 @@
        						<td><input type = "text" name = "usuario" ></td>
        					</tr>
        					<br><br>
-           				    <td alind = "left">Senha:</td>
+           				    <td>Senha:</td>
        				 		<td><input type = "password" name = "senha"></td>
        					</table>				 		
        				 		<br><br><br>

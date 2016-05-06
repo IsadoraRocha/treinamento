@@ -7,6 +7,7 @@
 
 <title>Pagina Auxilair</title>
 <meta charset = "uft-8">
+<script type="text/javascript" src = "JavaScript/javaScript.js"></script>
 <meta name = "viewport" content = "width = device-width, initial-scale = 1">
 <link rel = "stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
@@ -36,7 +37,9 @@
 	</nav>
 	
 	<div style = "display:block">
-	<div class="container">
+	<div class = "caursel-caption" style= "padding: 70px" align="center"><h1> Seja bem vindo a página Sonner Sistemas</h1></div>
+	
+	<!--  <div class="container">
   		<br>
   		<div id="myCarousel" class="carousel slide" data-ride="carousel">	
 	 		<ol class="carousel-indicators">
@@ -47,7 +50,7 @@
     		</ol>
     
     		<div class="carousel-inner" role="listbox" align="center">
-     			 <div class = "caursel-caption" style= "padding: 70px" align="center"><h1> Seja bem vindo a página Sonner Sistemas</h1></div>
+     			 
      			 <div class="item active">
        			 	<img src="http://www.freestockphotos.name/wallpaper-original/wallpapers/keyboard-and-coffee-on-a-desk-21.jpg" alt="Imagem 1" width="460" height="345">
       			</div>
@@ -74,26 +77,42 @@
       		<span class="sr-only">Next</span>
     	 </a>
     	</div>
-    </div>
+    </div>-->
     
 	<br><br>
 	
 		<div class = "row show-grig fundoTransparence" >
-			<div class = "col-md-2" style = "border-right: 5px solid rgba(100,100,100, .1);" >
+			<div class = "col-md-2" >
 				<p id = "op"><br>Opção 1;<br>Opção 2;<br>Opção 3;<br>Opção 4;<br></p>
 			</div> 
 	
-			<div class = "col-md-10" >
+			<div class = "col-md-10" align="center" style = "border-left: 5px solid rgba(100,100,100, .1);" >
 				<h2><br>Lista de Pessoas</h2>
-				<table align = "center" >
+				<table class = "table-striped" name = "tabelaDados">
 			
 				<%
 				List<Pessoa> listaDePessoas  = (List<Pessoa>)request.getAttribute("listaDevalores");
-				for(int i = 0; i < listaDePessoas.size(); i++){%>						
+				
+				for(int i = 0; i < listaDePessoas.size(); i++){
+				
+					Pessoa pessoaCorrente = listaDePessoas.get(i);
+				%>						
 					<tr>
-						<td><%=listaDePessoas.get(i).getNome()%></td>
-						<td><%=listaDePessoas.get(i).getEmail()%></td>
+						<td><%=pessoaCorrente.getNome()%></td>
+						<td><%=pessoaCorrente.getEmail()%></td>
+
+
+						<td><input type = "button" value = "Altera dado" onclick = "javascript:teste( <%=pessoaCorrente.getId()%>)"><br>
+						
+						
+						<!-- <form action ="RemoveLinha" method = "post" name = "remove"></form> -->
+						
+						<input type = "button" value = "Deleta dado" onclick = "javascript:remove();"></td>
+						
+						<!-- <a style = "color: gray; font-size: 10px;" href = "javascript:teste();">Alterar Dado</a> -->
 					</tr>
+					
+					
 					<%
 				}
 				%>
@@ -122,16 +141,16 @@
 -->
 			</div>
 		
-		<div aling = "center"><h2>Edição de dados</h2><br><br>
+		<div align = "center"><h2>Edição de dados</h2><br><br>
 			
-			<form action ="ServletBD" method = "post">
-				<table >
+			<form action ="ServletBD" method = "post" onsubmit = "return semVirgula()" name = "BD">
+				<table>
 				<tr>
 					<td>Nome:</td>
-					<td><input type = "text" name = "nome"><br></td></tr>
+					<td><input type = "text" id = "nome" onkeypress = "return semVirgula(event)"><br></td></tr>
 				<tr>	
 					<td>e-mail:</td>
-					<td><input type = "text" name = "email"><br></td>
+					<td><input type = "email" name = "email"><br></td>
 				</tr>
 				</table>
 			<input type = "submit" value = "gravar">							
