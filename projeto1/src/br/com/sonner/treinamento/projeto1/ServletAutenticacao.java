@@ -29,55 +29,52 @@ public class ServletAutenticacao extends HttpServlet {
         super();
     }
 
-    
-    
-    
-    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Conectar com o banco de dados
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://10.1.1.16:3306/agritap","root","sicsadm");
-			//Buscar a informacao no banco		
-			ResultSet resultSet = connection.createStatement().executeQuery("select id,nome,cpf,email,ativo from Pessoa");
-			List<Pessoa> listaDePessoas = new LinkedList<>();
-			while(resultSet.next())	{
+		doPost(request, response);
+	}
+		protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+			
+			
+			
+//			String Nome = request.getParameter("nome"); 
+//	        String Email = request.getParameter("email");
+			
+			try {
+				Class.forName("com.mysql.jdbc.Driver");
+				Connection connection = DriverManager.getConnection("jdbc:mysql://10.1.1.16:3306/agritap","root","sicsadm");
+				//Buscar a informacao no banco		
+				ResultSet resultSet = connection.createStatement().executeQuery("select id,nome,cpf,email,ativo from Pessoa");
+				List<Pessoa> listaDePessoas = new LinkedList<>();
+				while(resultSet.next())	{
 
-				String nome = resultSet.getString("nome");
-				String email = resultSet.getString("email");
-				boolean ativo = resultSet.getBoolean("ativo");
-				int id = resultSet.getInt("id");
+					String nome = resultSet.getString("nome");
+					String email = resultSet.getString("email");
+					boolean ativo = resultSet.getBoolean("ativo");
+					int id = resultSet.getInt("id");
+					
+					Pessoa pessoa = new Pessoa();
+					pessoa.setNome(nome);
+					pessoa.setEmail(email);
+					pessoa.setAtivo(ativo);
+					pessoa.setId(id);
+					listaDePessoas.add(pessoa);
 				
-				Pessoa pessoa = new Pessoa();
-				pessoa.setNome(nome);
-				pessoa.setEmail(email);
-				pessoa.setAtivo(ativo);
-				pessoa.setId(id);
-				listaDePessoas.add(pessoa);
-			
-			
-			}
-			
-			//Disponibilizar a informacao para o jsp
-			request.setAttribute("listaDevalores" , listaDePessoas);
-			
-			//fazer
-			
+				
+				}
+				
+				//Disponibilizar a informacao para o jsp
+				request.setAttribute("listaDevalores" , listaDePessoas);
+				request.getRequestDispatcher("auxiliar.jsp").forward(request, response);
+				
 			//Fechar a conexao com o banco
-		connection.close();
-		request.getRequestDispatcher("auxiliar.jsp").forward(request, response);
-	
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			connection.close();
+			
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
-
-		
 	}
 	
 	

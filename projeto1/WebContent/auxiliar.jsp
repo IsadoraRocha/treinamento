@@ -102,12 +102,12 @@
 						<td><%=pessoaCorrente.getEmail()%></td>
 
 
-						<td><input type = "button" value = "Altera dado" onclick = "javascript:teste( <%=pessoaCorrente.getId()%>)"><br>
+						<td><input type = "button" value = "Altera dado" onclick = "javascript:teste(<%=pessoaCorrente.getId()%>)"><br>
 						
 						
 						<!-- <form action ="RemoveLinha" method = "post" name = "remove"></form> -->
 						
-						<input type = "button" value = "Deleta dado" onclick = "javascript:remove();"></td>
+						<input type = "button" value = "Deleta dado" onclick = "javascript:removeLinha(<%=pessoaCorrente.getId()%>)"></td>
 						
 						<!-- <a style = "color: gray; font-size: 10px;" href = "javascript:teste();">Alterar Dado</a> -->
 					</tr>
@@ -147,13 +147,13 @@
 				<table>
 				<tr>
 					<td>Nome:</td>
-					<td><input type = "text" id = "nome" onkeypress = "return semVirgula(event)"><br></td></tr>
+					<td><input type = "text" name = "nome" onkeypress = "return semVirgula(event)"><br></td></tr>
 				<tr>	
 					<td>e-mail:</td>
 					<td><input type = "email" name = "email"><br></td>
 				</tr>
 				</table>
-			<input type = "submit" value = "gravar">							
+			<input type = "button" value = "gravar"  onclick = "javascript:insere()">							
 			</form>
 					
 		</div>
