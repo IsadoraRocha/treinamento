@@ -25,14 +25,12 @@
 
 
 <div class = "panel panel-edfaut">
-	<form class = "panel-body" action ="alteraDados" method = "post">
+	<form class = "panel-body" action ="mudaDados" method = "post">
 		<%  Pessoa pessoa = (Pessoa)request.getAttribute("pessoaEditada");
 			Pessoa novaPessoa = pessoa;
-		%>
-			
-			
+		%>	
 		<table>
-		<input type=hidden name=id value=<%=novaPessoa.getId()%> 
+	  	<input type=hidden name=id value="<%=novaPessoa.getId()%>" /> 
 			<tr>
 				<td>Nome:</td>
 				<td><input type = "text" name = "nome" value = "<%=novaPessoa.getNome()%>"><br></td></tr>
@@ -41,7 +39,7 @@
 				<td><input type = "text" name = "email" value = "<%=novaPessoa.getEmail()%>"><br></td>
 			</tr>
 		</table>
-		<br><div class = "boxCentraliza"><input type = "submit" value = "Gravar" aling = "center"></div>							
+		<br><div class = "boxCentraliza"><input type = "submit" value = "Gravar" ></div>							
 	</form>
 </div>
 

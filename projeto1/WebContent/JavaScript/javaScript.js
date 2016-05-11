@@ -22,15 +22,13 @@ function semVirgula(e){
    			   return true;
 }
 
-funcion insere(){
-		location.href = 
-}
+
 
 function teste(id){
-			location.href = "alteraDados?id="+id;	
+			location.href = "mudaDados?id="+id;	
 }
 
 function removeLinha(id){
-		location.href = "RemoveLinha?id="+id;
+		location.href = "removeLinha?id="+id;
 
 }

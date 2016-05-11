@@ -2,7 +2,7 @@
 <head>
 <title>Primeira Página</title>
 
-<link rel="stylesheet" href="css/oiMundo.css" />
+<link rel="stylesheet" href="css/index.css" />
 <script type="text/javascript" src = "JavaScript/javaScript.js"></script>
 </head>
 <body>

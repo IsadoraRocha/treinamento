@@ -16,13 +16,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.sonner.treinamento.projeto1.model.Pessoa;
 
-
-@WebServlet("/alteraDados")
-public class alteraDados extends HttpServlet {
+@WebServlet("/mudaDados")
+public class MudaDados extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
  
-    public alteraDados() {
+    public MudaDados() {
         super();
     }
 

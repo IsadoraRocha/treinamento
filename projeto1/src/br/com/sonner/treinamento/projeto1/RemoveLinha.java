@@ -18,7 +18,7 @@ import br.com.sonner.treinamento.projeto1.model.Pessoa;
 /**
  * Servlet implementation class RemoveLinha
  */
-@WebServlet("/RemoveLinha")
+@WebServlet("/removeLinha")
 public class RemoveLinha extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

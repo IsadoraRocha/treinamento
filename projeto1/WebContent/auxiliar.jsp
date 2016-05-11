@@ -12,7 +12,7 @@
 <link rel = "stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/layout.css" />
+<link rel="stylesheet" href="css/auxiliar.css" />
 </head>
 
 <body>
@@ -103,19 +103,10 @@
 
 
 						<td><input type = "button" value = "Altera dado" onclick = "javascript:teste(<%=pessoaCorrente.getId()%>)"><br>
-						
-						
-						<!-- <form action ="RemoveLinha" method = "post" name = "remove"></form> -->
-						
 						<input type = "button" value = "Deleta dado" onclick = "javascript:removeLinha(<%=pessoaCorrente.getId()%>)"></td>
-						
-						<!-- <a style = "color: gray; font-size: 10px;" href = "javascript:teste();">Alterar Dado</a> -->
 					</tr>
-					
-					
-					<%
-				}
-				%>
+			<% } %>
+				
 				</table>
 			</div>
 	
@@ -141,7 +132,7 @@
 -->
 			</div>
 		
-		<div align = "center"><h2>Edição de dados</h2><br><br>
+		<div align = "center"><h2>Inserir pessoa</h2><br><br>
 			
 			<form action ="ServletBD" method = "post" onsubmit = "return semVirgula()" name = "BD">
 				<table>
@@ -153,7 +144,7 @@
 					<td><input type = "email" name = "email"><br></td>
 				</tr>
 				</table>
-			<input type = "button" value = "gravar"  onclick = "javascript:insere()">							
+			<input type = "submit" value = "gravar">							
 			</form>
 					
 		</div>
