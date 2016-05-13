@@ -12,7 +12,7 @@
 <link rel = "stylesheet" href = "http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="css/auxiliar.css" />
+<link rel="stylesheet" href="css/paginaPrincipal.css" />
 </head>
 
 <body>
@@ -102,8 +102,8 @@
 						<td><%=pessoaCorrente.getEmail()%></td>
 
 
-						<td><input type = "button" value = "Altera dado" onclick = "javascript:teste(<%=pessoaCorrente.getId()%>)"><br>
-						<input type = "button" value = "Deleta dado" onclick = "javascript:removeLinha(<%=pessoaCorrente.getId()%>)"></td>
+						<td><input class = "botaoAuxiliar" type = "button" value = "Altera dado" onclick = "javascript:teste(<%=pessoaCorrente.getId()%>)"><br>
+						<input class = "botaoAuxiliar" type = "button" value = "Deleta dado" onclick = "javascript:removeLinha(<%=pessoaCorrente.getId()%>)"></td>
 					</tr>
 			<% } %>
 				
@@ -134,7 +134,7 @@
 		
 		<div align = "center"><h2>Inserir pessoa</h2><br><br>
 			
-			<form action ="ServletBD" method = "post" onsubmit = "return semVirgula()" name = "BD">
+			<form action ="insereAlteraPessoa" method = "post" onsubmit = "return semVirgula()" >
 				<table>
 				<tr>
 					<td>Nome:</td>

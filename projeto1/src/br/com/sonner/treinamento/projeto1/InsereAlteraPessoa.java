@@ -16,12 +16,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import br.com.sonner.treinamento.projeto1.model.Pessoa;
 
-@WebServlet("/mudaDados")
-public class MudaDados extends HttpServlet {
+@WebServlet("/insereAlteraPessoa")
+public class InsereAlteraPessoa extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
+	ConectaBanco bancoDeDados = new ConectaBanco();
+    Connection connection;
  
-    public MudaDados() {
+    public InsereAlteraPessoa() {
         super();
     }
 
@@ -33,8 +35,7 @@ public class MudaDados extends HttpServlet {
         
         try{
         	
-        	Class.forName("com.mysql.jdbc.Driver");
-        	Connection connection = DriverManager.getConnection("jdbc:mysql://10.1.1.16:3306/agritap","root","sicsadm");
+        	bancoDeDados.conecta();
         	
         	Statement st  = connection.createStatement();
         	
@@ -50,7 +51,7 @@ public class MudaDados extends HttpServlet {
         	}
         	       	
         	
-    		request.getRequestDispatcher("mudaDados.jsp").forward(request, response);
+    		request.getRequestDispatcher("insereAlteraPessoa.jsp").forward(request, response);
     		connection.close();
         	
         	
@@ -65,26 +66,32 @@ public class MudaDados extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String ID = request.getParameter("id");
-		int id = Integer.parseInt(ID);
 		
-		String Nome = request.getParameter("nome"); 
-		String Email = request.getParameter("email");
+		String nome = request.getParameter("nome"); 
+		String email = request.getParameter("email");
 		
 		try{
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://10.1.1.16:3306/agritap","root","sicsadm");
-			Pessoa pessoa = new Pessoa();
-			pessoa.setNome(Nome);
-			pessoa.setEmail(Email);
+			bancoDeDados.conecta();
 			
-			
+			String ID = request.getParameter("id");
 			Statement st  = connection.createStatement();
-         	String queryUpdate ="Update Pessoa set nome ='"+Nome+"', email = '"+Email+"' where id = "+id;
-        	st.executeUpdate(queryUpdate);
-			connection.close();
+
+			String query = null;
 			
-			request.getRequestDispatcher("servletAutenticacao").forward(request, response);
+			if(ID == null){
+				 query ="Insert into Pessoa (nome,email)  values('"+nome+"','"+email+"')";
+//				st.executeUpdate(query);
+			
+			}else{
+				int id = Integer.parseInt(ID);
+				query ="Update Pessoa set nome ='"+nome+"', email = '"+email+"' where id = "+id;
+			}
+			st.executeUpdate(query);
+			
+			response.sendRedirect("paginaPrincipal");
+			connection.close();
+
+			//			request.getRequestDispatcher("servletAutenticacao").forward(request, response);
 			
 		}catch(Exception e){
 			e.printStackTrace();

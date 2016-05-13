@@ -17,7 +17,7 @@
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="css/mudaDadosCSS.css" />
+<link rel="stylesheet" href="css/insereAlteraPessoa.css" />
 
 </head>
 <body>
@@ -25,7 +25,7 @@
 
 
 <div class = "panel panel-edfaut">
-	<form class = "panel-body" action ="mudaDados" method = "post">
+	<form class = "panel-body" action ="insereAlteraPessoa" method = "post">
 		<%  Pessoa pessoa = (Pessoa)request.getAttribute("pessoaEditada");
 			Pessoa novaPessoa = pessoa;
 		%>	

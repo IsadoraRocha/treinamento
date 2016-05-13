@@ -2,7 +2,7 @@
 <head>
 <title>Primeira Página</title>
 
-<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/paginaInicial.css" />
 <script type="text/javascript" src = "JavaScript/javaScript.js"></script>
 </head>
 <body>
@@ -41,7 +41,7 @@
        <article id = "fundo">
        		<h2 class = "center"><strong>Terceira parte da página: login</strong></h2>
        		<div>
-       			<form name = "my forms" class = "center"  action="servletAutenticacao"  onsubmit = "return validaUsuario()" method="post">
+       			<form name = "my forms" class = "center"  action="paginaPrincipal"  onsubmit = "return validaUsuario()" method="post">
        				<div id = "boxLogin" clas = "center" >
        					<table id = "login" style = "font-size: 150%" class = "center">
        					<tr>

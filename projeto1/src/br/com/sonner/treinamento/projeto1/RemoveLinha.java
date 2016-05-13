@@ -22,9 +22,9 @@ import br.com.sonner.treinamento.projeto1.model.Pessoa;
 public class RemoveLinha extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    ConectaBanco bancoDeDados = new ConectaBanco();
+    Connection connection;
+    
     public RemoveLinha() {
         super();
         // TODO Auto-generated constructor stub
@@ -39,8 +39,7 @@ public class RemoveLinha extends HttpServlet {
 		
 		try{
 			
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection connection = DriverManager.getConnection("jdbc:mysql://10.1.1.16:3306/agritap","root","sicsadm");
+			bancoDeDados.conecta();
 			
 			Statement st  = connection.createStatement();
 			
@@ -51,7 +50,7 @@ public class RemoveLinha extends HttpServlet {
 			
 			//pessoa.getId();
 			
-			request.getRequestDispatcher("servletAutenticacao").forward(request, response);
+			response.sendRedirect("paginaPrincipal");
 			connection.close();
 			
 			

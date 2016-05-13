@@ -25,7 +25,7 @@ function semVirgula(e){
 
 
 function teste(id){
-			location.href = "mudaDados?id="+id;	
+			location.href = "insereAlteraPessoa?id="+id;	
 }
 
 function removeLinha(id){
